@@ -1,9 +1,13 @@
-FROM golang
+FROM python:3.12
 
-WORKDIR /app
+RUN mkdir -p /var/www
 
-COPY . /app
+COPY requirements.txt /var/www
 
-EXPOSE 2000
+WORKDIR /var/www
 
-ENTRYPOINT ["/bin/bash", "-c", "go run main.go"]
+COPY . /var/www
+
+EXPOSE 5000
+
+ENTRYPOINT []
