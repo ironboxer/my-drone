@@ -1,2 +1,1 @@
-# my-drone
-drone test
+# Deploy Drone To Your Project
