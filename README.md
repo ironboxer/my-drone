@@ -11,5 +11,5 @@ flask --app app run --debug
 
 ### Deploy on Docker-compose mode
 ```bash
-docker compose up -d --no-deps --build
+docker compose up -d --no-deps --force-recreate --build
 ```
