@@ -6,8 +6,8 @@ COPY requirements.txt /var/www
 
 WORKDIR /var/www
 
-COPY . /var/www
+RUN python3 -m pip install -r requirements.txt
 
-EXPOSE 5000
+COPY . /var/www
 
 CMD ["bash"]
