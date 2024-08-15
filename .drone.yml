@@ -17,6 +17,9 @@ steps:
     - cd my-drone
     - ll -a .
     - docker compose up -d --no-deps --build
+  when:
+    branch:
+      - main
 
 
 - name: check
@@ -27,7 +30,4 @@ steps:
 trigger:
   branch:
   - main
-  - dev
-  event:
-  - push
 
