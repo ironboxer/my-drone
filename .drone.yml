@@ -1,21 +1,26 @@
 kind: pipeline
-type: docker
+type: exec
 name: default
 
 
+platform:
+  os: linux
+  arch: amd64
+
+
 steps:
-- name: clone
-  image: alpine/git
-  pull: if-not-exists
+- name: pull
   commands:
+    - rm -rf /var/www/my-drone
+    - cd /var/www/
     - git clone git@github.com:ironboxer/my-drone.git
+    - cd my-drone
+    - docker compose up -d no-deps --build
 
 
-- name: publish
-  image: plugins/docker
-  pull: if-not-exists
-  script:
-    - docker compose up -d --no-deps --build
+- name: check
+  commands:
+    - curl http://localhost:4444/
 
 
 trigger:
