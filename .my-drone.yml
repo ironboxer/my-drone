@@ -10,7 +10,7 @@ platform:
 
 
 steps:
-- name: pull
+- name: pull-image
   commands:
     - rm -rf /var/www/my-drone
     - cd /var/www/
@@ -18,12 +18,9 @@ steps:
     - cd my-drone
     - echo $(git log -1)
     - docker compose up -d --no-deps --force-recreate --build
-  when:
-    branch:
-      - main
 
 
-- name: check
+- name: check-health
   commands:
     - curl http://localhost:4444/
 
