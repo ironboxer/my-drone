@@ -26,7 +26,8 @@ steps:
 
 trigger:
   branch:
-    - main
+  - main
+  - dev
   event:
-    - push
+  - push
 
