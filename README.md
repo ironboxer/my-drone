@@ -2,5 +2,5 @@
 
 # Run
 ```bash
-flask --app app/app run
+flask --app app run --debug
 ```
