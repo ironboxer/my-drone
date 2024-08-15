@@ -13,5 +13,3 @@ flask --app app run --debug
 ```bash
 docker compose up -d --no-deps --build
 ```
-
-

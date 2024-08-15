@@ -1,11 +1,10 @@
 ---
-services: 
-  web: 
+services:
+  web:
     command: flask --app app run --debug --host "0.0.0.0"
     ports:
       - "4444:5000"
     build:
       context: .
       dockerfile: Dockerfile
-    working_dir: /var/www/my-drone
-
+    working_dir: /var/www
