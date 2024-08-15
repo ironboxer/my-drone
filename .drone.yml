@@ -16,7 +16,7 @@ steps:
     - cd /var/www/
     - git clone git@github.com:ironboxer/my-drone.git
     - cd my-drone
-    - ls -la .
+    - echo $(git log -1)
     - docker compose up -d --no-deps --build
   when:
     branch:
