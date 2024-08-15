@@ -22,3 +22,8 @@ steps:
   commands:
     - curl http://localhost:4444/
 
+
+trigger:
+  branch
+  - main
+
