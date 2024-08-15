@@ -1,0 +1,10 @@
+services: 
+  web: 
+    command: flask --app app.py --debug
+    port:
+      - "4444:5000"
+    build:
+      context: .
+      dockerfile: Dockerfile 
+    working_dir: /var/www/
+

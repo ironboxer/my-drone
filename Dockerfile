@@ -10,4 +10,4 @@ COPY . /var/www
 
 EXPOSE 5000
 
-ENTRYPOINT []
+CMD ["bash"]
