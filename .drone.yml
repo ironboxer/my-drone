@@ -2,9 +2,23 @@ kind: pipeline
 type: docker
 name: default
 
+
 steps:
-- name: greeting
-  image: gcr.io/library/golang
+- name: clone
+  image: alpine/git
+  pull: if-not-exists
   commands:
-    - go run main.go
+    - git clone git@github.com:ironboxer/my-drone.git
+
+
+- name: publish
+  image: plugins/docker
+  pull: if-not-exists
+  script:
+    - docker compose up -d --no-deps --build
+
+
+trigger:
+  branch:
+    - main
 
