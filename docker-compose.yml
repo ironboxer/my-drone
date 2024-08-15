@@ -6,6 +6,6 @@ services:
       - "4444:5000"
     build:
       context: .
-      dockerfile: Dockerfile 
-    working_dir: /var/www/
+      dockerfile: Dockerfile
+    working_dir: /var/www/my-drone
 
