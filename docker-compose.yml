@@ -2,9 +2,9 @@
 services:
   web:
     user: root
-    command: flask --app app run --host "0.0.0.0"
+    command: gunicorn app:app -b '0.0.0.0:4444'
     ports:
-      - "4444:5000"
+      - "4444:4444"
     build:
       context: .
       dockerfile: Dockerfile
