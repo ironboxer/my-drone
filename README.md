@@ -9,6 +9,11 @@
 flask --app app run --debug
 ```
 
+### gunicorn
+```bash
+gunicorn app:app
+```
+
 ### Deploy on Docker-compose mode
 ```bash
 docker compose up --no-deps --force-recreate --build -d
