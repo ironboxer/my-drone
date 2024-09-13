@@ -6,6 +6,6 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return f'<p>{datetime.now()}</p>'
+    return f'<p>current: {datetime.now()}</p>'
 
 
